@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>QuizCraft · Web Technologies</title>
+		<link rel="stylesheet" href="vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script defer src="vendor/jspdf.umd.min.js"></script>
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+		<header class="container d-flex justify-content-between align-items-center py-4">
+			<a class="brand" href="index.html">
+				<span class="logo">Q</span> QuizCraft<span class="brand-dot">.</span>
+			</a>
+			<button id="theme" class="btn quiet" aria-label="Switch to dark mode">☾ Dark mode</button>
+		</header>
+
+		<main class="container">
+			<section class="intro">
+				<span class="eyebrow">THE WEB TECHNOLOGIES CHALLENGE</span>
+				<h1>A little focus.<br>A sharper mind.</h1>
+				<p>Five questions. One chance each. See what you know.</p>
+			</section>
+
+			<div class="row g-4 justify-content-center">
+				<div class="col-lg-8">
+					<section class="panel" id="welcome">
+						<div class="d-flex justify-content-between">
+							<span class="tag">READY WHEN YOU ARE</span>
+							<span class="muted">01 / 03</span>
+						</div>
+						<h2>Your next small challenge.</h2>
+						<p class="muted">Put your HTML, CSS, JavaScript, and Bootstrap knowledge to the test.</p>
+						<div class="row g-3 my-3">
+							<div class="col-4">
+								<div class="stat"><strong>05</strong><span>Questions</span></div>
+							</div>
+							<div class="col-4">
+								<div class="stat"><strong>20s</strong><span>Per question</span></div>
+							</div>
+							<div class="col-4">
+								<div class="stat"><strong>15</strong><span>Question bank</span></div>
+							</div>
+						</div>
+						<ul class="instructions">
+							<li>A new random set in every attempt.</li>
+							<li>Select an answer to see instant feedback.</li>
+							<li>When time runs out, the quiz moves forward automatically.</li>
+						</ul>
+						<button id="start" class="btn primary w-100">Let's start the quiz <span aria-hidden="true">→</span></button>
+						<p class="small muted text-center mt-3 mb-0">No sign-up. Just you and your knowledge.</p>
+					</section>
+
+					<section id="quiz" class="panel" hidden>
+						<div class="d-flex justify-content-between align-items-center mb-3">
+							<span id="counter" class="tag"></span>
+							<span id="timer" class="timer" role="timer" aria-label="Time remaining"></span>
+						</div>
+						<div id="progress" class="segments" aria-label="Question progress"></div>
+						<div class="legend">
+							<span>● Correct</span>
+							<span>● Incorrect</span>
+							<span>● Unanswered</span>
+						</div>
+						<span id="category" class="eyebrow"></span>
+						<h2 id="question" tabindex="-1"></h2>
+						<div id="options" class="options" role="group" aria-labelledby="question"></div>
+						<div id="feedback" role="status" class="feedback" hidden></div>
+						<div class="d-flex justify-content-between align-items-center mt-4 gap-3">
+							<span class="muted small">Choose one answer</span>
+							<div class="d-flex gap-2">
+								<button id="skip" class="btn quiet">Skip</button>
+								<button id="next" class="btn primary" disabled>Next question →</button>
+							</div>
+						</div>
+					</section>
+
+					<section id="results" class="panel" hidden>
+						<span class="tag">CHALLENGE COMPLETE</span>
+						<div class="result-top">
+							<div id="scoreRing" class="score-ring"><strong id="percentage"></strong></div>
+							<div>
+								<h2 id="resultTitle"></h2>
+								<p id="scoreText" class="muted"></p>
+							</div>
+						</div>
+						<div id="totals" class="row g-2 mb-4"></div>
+						<div class="d-flex flex-wrap gap-2">
+							<button id="download" class="btn primary">↓ Download results PDF</button>
+							<button id="restart" class="btn quiet">Try again ↻</button>
+						</div>
+						<p id="pdfStatus" class="small muted" role="status"></p>
+						<h3 class="review-heading">Your answer review</h3>
+						<div id="review"></div>
+					</section>
+				</div>
+
+				<aside class="col-lg-4">
+					<div class="side-card">
+						<span class="eyebrow">YOUR PERSONAL BEST</span>
+						<div class="best"><span id="best">—</span><small>/ 5</small></div>
+						<p class="muted small">Small steps. Better scores.<br>Your best result stays on this device.</p>
+						<hr>
+						<span class="eyebrow">IN THE MIX</span>
+						<div class="topics">
+							<span>HTML</span>
+							<span>CSS</span>
+							<span>JavaScript</span>
+							<span>Bootstrap</span>
+						</div>
+						<div class="tip">
+							<strong>A quick tip</strong>
+							<p>Read every option before you choose. Sometimes the smallest detail makes the difference.</p>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</main>
+
+		<footer class="container py-4 muted small">
+			Made for curious minds. <span>QuizCraft / Web Technologies</span>
+		</footer>
+	</body>
+</html>
